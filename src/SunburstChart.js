@@ -19,7 +19,7 @@ class SunburstChart extends Component {
             ?parent rdfs:label ?parent_name .
             }
         `
-        runSPARQL("http://explore.ai-strategies.org/blazegraph/namespace/ITO/sparql",query).then((data) => {
+        runSPARQL("http://explore.ai-strategies.org:9999/blazegraph/namespace/ITO/sparql",query).then((data) => {
             this.drawChart(data);
         })
     }
