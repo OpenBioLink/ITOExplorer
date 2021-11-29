@@ -40,19 +40,16 @@ var d3sparql = {
       d3sparql.treemapzoom(json, config)
     }
 */
-function tree(json, config) {
-    var head = json.head.vars
-    var data = json.results.bindings
+function tree(json, root) {
 
     var pair = new Map()
     var size = new Map()
-    var root = config.root
     var parent = true;
     var child = true;
     var children = true
-    for (var i = 0; i < data.length; i++) {
-      parent = data[i][config.parent].value
-      child = data[i][config.child].value
+    for (var i = 0; i < json.length; i++) {
+      parent = json[i][1]
+      child = json[i][0]
       if (parent != child) {
         if (pair.has(parent)) {
           children = pair.get(parent)
@@ -78,7 +75,7 @@ function tree(json, config) {
     }
     var tree = traverse(root)
   
-    if (d3sparql.debug) { console.log(JSON.stringify(tree)) }
+    if (true || d3sparql.debug) { console.log(JSON.stringify(tree)) }
     return tree
   }
 

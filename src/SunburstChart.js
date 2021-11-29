@@ -1,25 +1,16 @@
 
 import React, {Component} from 'react';
 import * as d3 from "d3";
-import {runSPARQL} from "./sparql";
+import {get} from "./rest";
 import {tree} from "./d3sparql";
+const axios = require('axios');
 
 class SunburstChart extends Component {
 
     componentDidMount() {
-        var query =`
-            PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-            PREFIX ito: <https://identifiers.org/ito:>
-            SELECT DISTINCT ?parent_name ?parent ?child_name ?child
-            WHERE
-            {
-            ?child rdfs:subClassOf+ ito:Process .
-            ?child rdfs:subClassOf ?parent .
-            ?child rdfs:label ?child_name .
-            ?parent rdfs:label ?parent_name .
-            }
-        `
-        runSPARQL("http://explore.ai-strategies.org:9999/blazegraph/namespace/ITO/sparql",query).then((data) => {
+
+        get("https://raw.githubusercontent.com/OpenBioLink/ITOExplorer/main/sunburst.json").then((data) => {
+            console.log(data);
             this.drawChart(data);
         })
     }
@@ -49,10 +40,13 @@ class SunburstChart extends Component {
               (root);
           }
 
-        data = tree(data, {root: "Process", parent: "parent_name", child: "child_name"});
-        var color = d3.scaleOrdinal(d3.quantize(d3.interpolateRainbow, data.children.length + 1))
+        data = tree(data, "Process");
         const root = partition(data);
-        
+        console.log(root);
+        var color = d3.interpolateReds
+        console.log(d3.quantize(d3.interpolateReds, root.value))
+        console.log(color(0))
+        console.log(color(root.value))
         root.each(d => d.current = d);
 
         const svg = d3.select("#sunburst").append("svg")
@@ -68,7 +62,7 @@ class SunburstChart extends Component {
             .selectAll("path")
             .data(root.descendants().slice(1))
             .join("path")
-            .attr("fill", d => { while (d.depth > 1) d = d.parent; return color(d.data.name); })
+            .attr("fill", d => { return color(d.value / (d.parent.value*0.5)); })
             .attr("fill-opacity", d => arcVisible(d.current) ? (d.children ? 0.6 : 0.4) : 0)
             .attr("d", d => arc(d.current));
         
