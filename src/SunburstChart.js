@@ -3,23 +3,95 @@ import React, {Component} from 'react';
 import * as d3 from "d3";
 import {get} from "./rest";
 import {tree} from "./d3sparql";
-const axios = require('axios');
 
 class SunburstChart extends Component {
 
     componentDidMount() {
-
-        get("https://raw.githubusercontent.com/OpenBioLink/ITOExplorer/main/sunburst.json").then((data) => {
-            console.log(data);
+        get(this.props.url).then((data) => {
             this.drawChart(data);
         })
     }
 
-    
+    /*
+    drawLoading(){
+        var width = 900
+        var radius = width / 6
+        var format = d3.format(",d")
+
+        var arc = d3.arc()
+            .startAngle(d => d.x0)
+            .endAngle(d => d.x1)
+            .padAngle(d => Math.min((d.x1 - d.x0) / 2, 0.005))
+            .padRadius(radius * 1.5)
+            .innerRadius(d => d.y0 * radius)
+            .outerRadius(d => Math.max(d.y0 * radius, d.y1 * radius - 1))
+        
+        var color = d3.interpolateReds
+        const svg = d3.select("#sunburst").append("svg")
+            .attr("width", width)
+            .attr("height", width)
+            .attr("viewBox", [0, 0, width, width])
+            .style("font", "13px helvetica sans-serif");
+
+
+        var root = {"name": "root", "children": []}
+        var data = [1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377]
+        data.forEach((elem,idx) => {
+            var children = data.slice(0,idx)
+            children.forEach((elem_,idx_) => {
+                children[idx_] = {"name": elem_, "value": elem_}
+            });
+            root.children.push({"name": elem, "children": children})
+        });
+
+        root = d3.hierarchy(root)
+                    .sum(d => d.value)
+                    .sort((a, b) => b.value - a.value);
+        root.each(d => d.current = d);
+        console.log(root);
+            
+        var part = d3.partition().size([2 * Math.PI, 3])(root);
+
+        console.log(part)
+        
+        const g = svg.append("g")
+            .attr("transform", `translate(${width / 2},${width / 2})`);
+
+        const path = g.append("g")
+            .selectAll("path")
+            .data(part.descendants().slice(1))
+            .join("path")
+            .attr("fill", d => { return color(d.value / root.children[0].value); })
+            .attr("d", d => arc(d.current));
+
+        path.filter(d => d.children)
+                .style("cursor", "pointer")
+                .on("end", transition);
+
+        transition();
+        function transition(){
+            root.each(d => d.target = {
+                x0: -d.current.x0,
+                x1: -d.current.x1,
+                y0: d.current.y0,
+                y1: d.current.y1
+            });
+
+            console.log("clicked")
+            const t = g.transition().duration(250);
+            path.transition(t)
+                .tween("data", d => {
+                    const i = d3.interpolate(d.current, d.target);
+                    return t => d.current = i(t);
+                })
+                .attrTween("d", d => () => arc(d.current))
+        }
+    }
+    */
 
     drawChart(data) {
-
-        var width = 983
+        
+        var width = this.props.width
         var radius = width / 6
         var format = d3.format(",d")
 
@@ -40,20 +112,16 @@ class SunburstChart extends Component {
               (root);
           }
 
-        data = tree(data, "Process");
+        data = tree(data, this.props.root);
         const root = partition(data);
-        console.log(root);
         var color = d3.interpolateReds
-        console.log(d3.quantize(d3.interpolateReds, root.value))
-        console.log(color(0))
-        console.log(color(root.value))
         root.each(d => d.current = d);
-
-        const svg = d3.select("#sunburst").append("svg")
+        
+        const svg = d3.select("#" + this.props.id).append("svg")
             .attr("width", width)
             .attr("height", width)
             .attr("viewBox", [0, 0, width, width])
-            .style("font", "10px sans-serif");
+            .style("font", "13px helvetica sans-serif");
         
         const g = svg.append("g")
             .attr("transform", `translate(${width / 2},${width / 2})`);
@@ -144,7 +212,7 @@ class SunburstChart extends Component {
     }
 
     render() {
-        return <div id="sunburst"/>;
+        return <div id={this.props.id} className="mt-2 text-center"/>;
       }
   
   
