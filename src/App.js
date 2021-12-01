@@ -28,30 +28,39 @@ function App() {
         </div>
       </nav>
       <div className="content">
-        <h1 id="home" className="title">
+        <h1 id="home" className="title display-4">
           Intelligence Task Ontology and Knowledge Graph (ITO)
-          <p align="center">
-            <a href="https://github.com/OpenBioLink/ITO" className="mx-2">
+        </h1>
+        <p align="center" className="mt-3 mb-5">
+            <a href="https://github.com/OpenBioLink/ITO" className="mx-1">
               <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/OpenBioLink/ITO?style=social"/>
             </a>
-            <a href="https://bioportal.bioontology.org/ontologies/ITO" className="mx-2">
+            <a href="https://bioportal.bioontology.org/ontologies/ITO" className="mx-1">
               <img alt="BioPortal ontology" src="https://img.shields.io/badge/BioPortal-ontology-success"/>
             </a>
+            <a href="https://arxiv.org/abs/2110.01434" className="mx-1">
+              <img alt="Arxiv paper" src="https://img.shields.io/badge/arXiv-paper-success"/>
+            </a>
+        </p>
+        <blockquote class="blockquote">
+          <p>
+            The Intelligence Task Ontology and Knowledge Graph (ITO) provides a comprehensive, curated model of artificial intelligence tasks, benchmarks and benchmark results, including the biomedical domain. 
           </p>
-        </h1>
-        The Intelligence Task Ontology and Knowledge Graph (ITO) provides a comprehensive, curated model of artificial intelligence tasks, benchmarks and benchmark results, including the biomedical domain.
+        </blockquote>
+        Research in artificial intelligence (AI) is addressing a growing number of tasks through a rapidly 
+        growing number of models and methodologies. This makes it difficult to keep track of where novel 
+        AI methods are successfully – or still unsuccessfully – applied, how progress is measured, how 
+        different advances might synergize with each other, and how future research should be prioritized. 
+        To help address these issues, we created the Intelligence Task Ontology and Knowledge Graph (ITO), 
+        a comprehensive, richly structured and manually curated resource on artificial intelligence tasks, 
+        benchmark results and performance metrics. The current version of ITO contain 685,560 edges, 
+        1,100 classes representing AI processes and 1,995 properties representing performance metrics. 
+        The goal of ITO is to enable precise and network-based analyses of the global landscape of AI tasks 
+        and capabilities. ITO is based on technologies that allow for easy integration and enrichment with 
+        external data, automated inference and continuous, collaborative expert curation of underlying 
+        ontological models. We make the ITO dataset and a collection of Jupyter notebooks utilising ITO 
+        openly available.
 
-        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.   
-
-  Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.   
-
-  Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.   
-
-  Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.   
-
-  Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis.   
-
-  At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, At accusam aliquyam diam diam dolore dolores duo eirmod eos erat, et nonumy sed tempor et et invidunt justo labore Stet clita ea et gubergren, kasd magna no rebum. sanctus sea sed takimata ut vero voluptua. est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
         <h1 id="processes" className="header">Processes Sunburst</h1>
         <SunburstChart width="900" url="https://raw.githubusercontent.com/OpenBioLink/ITOExplorer/main/processes.json" id="sunburst-processes" root="Process"/>
         <h1 id="data" className="header">Data Sunburst</h1>
