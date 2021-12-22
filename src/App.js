@@ -71,16 +71,18 @@ function App() {
         <h2 id="vp" className="header">Computer vision</h2>
         <h3>Trajectory for average gain ratio (task per year)</h3>
         <iframe id="cv_traj" className="mt-2 mb-5" style={{border:"none"}} seamless="seamless" src="/ITOExplorer/vision_process.html" height="725" width="100%"></iframe>
+        Global SOTA trajectory map for AI tasks in computer vision. Vertical dashes represent anchors (i.e. first results establishing a new benchmark for a given task). Arrows represent gains in a SOTA trajectory. Arrow colors represent the ratio of the gain, i.e. darker arrows represent stronger gains. AI tasks that would contain only a single arrow are not displayed.
         <h3>Comparative yearly distribution of state-of-the-art (SOTA) averaged gain ratio values</h3>
         <iframe id="cv_bpl" className="mt-2 mb-5" scrolling="no" style={{border:"none", display:"block", marginLeft:"auto", marginRight:"auto"}} seamless="seamless" src="/ITOExplorer/vision_process_bpl.html" height="430" width="1010px"></iframe>
-        <h3>Statistics</h3>
+        Comparative yearly distribution of state-of-the-art (SOTA) averaged gain ratio values for computer vision. Single dots in the boxplots represent the equivalent triangles values in the chart above. Anchors are not considered for this analysis.
         <iframe id="cv_tbl" className="mt-2 mb-5" scrolling="no" style={{border:"none", display:"block", marginLeft:"auto", marginRight:"auto"}} seamless="seamless" src="/ITOExplorer/vision_process_tbl.html" height="400" width="1000px"></iframe>
         <h2 id="nlp" className="header">Natural language processing</h2>
         <h3>Trajectory for average gain ratio (task per year)</h3>
         <iframe id="cv_traj" className="mt-2 mb-5" style={{border:"none"}} seamless="seamless" src="/ITOExplorer/natural_language_processing.html" height="725" width="100%"></iframe>
+        Global SOTA trajectory map for AI tasks in natural language processing. Vertical dashes represent anchors (i.e. first results establishing a new benchmark for a given task). Arrows represent gains in a SOTA trajectory. Arrow colors represent the ratio of the gain, i.e. darker arrows represent stronger gains. AI tasks that would contain only a single arrow are not displayed.
         <h3>Comparative yearly distribution of state-of-the-art (SOTA) averaged gain ratio values</h3>
         <iframe id="cv_bpl" className="mt-2 mb-5" scrolling="no" style={{border:"none", display:"block", marginLeft:"auto", marginRight:"auto"}} seamless="seamless" src="/ITOExplorer/natural_language_processing_bpl.html" height="430" width="1010px"></iframe>
-        <h3>Statistics</h3>
+        Comparative yearly distribution of state-of-the-art (SOTA) averaged gain ratio values for NLP. Single dots in the boxplots represent the equivalent triangles values in the chart above. Anchors are not considered for this analysis.
         <iframe id="cv_tbl" className="mt-2 mb-5" scrolling="no" style={{border:"none", display:"block", marginLeft:"auto", marginRight:"auto"}} seamless="seamless" src="/ITOExplorer/natural_language_processing_tbl.html" height="400" width="1000px"></iframe>
       </div>
     </div>
