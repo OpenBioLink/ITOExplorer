@@ -1,6 +1,5 @@
 import logo from './logo.svg';
 import './App.css';
-import { Navbar, Container, Nav, Modal, Button } from 'react-bootstrap';
 import SunburstChart from "./SunburstChart";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { useState } from 'react';
@@ -11,18 +10,21 @@ function App() {
 
   return (
     <div className="App">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light position-fixed w-200px">
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <a class="navbar-brand m-auto" href="#home">ITOExplorer</a>
-          <ul class="navbar-nav mr-auto flex-column vertical-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="#home">Home</a>
+      <nav className="navbar navbar-expand-lg navbar-light bg-light position-fixed w-200px">
+        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          <a className="navbar-brand m-auto" href="#home">ITO Explorer</a>
+          <ul className="navbar-nav mr-auto flex-column vertical-nav">
+            <li className="nav-item">
+              <a className="nav-link" href="#home">Home</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#processes">Processes</a>
+            <li className="nav-item">
+              <a className="nav-link" href="#processes">Processes</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#data">Data</a>
+            <li className="nav-item">
+              <a className="nav-link" href="#data">Data</a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#benchmarks">Benchmarks</a>
             </li>
           </ul>
         </div>
@@ -42,7 +44,7 @@ function App() {
               <img alt="Arxiv paper" src="https://img.shields.io/badge/arXiv-paper-success"/>
             </a>
         </p>
-        <blockquote class="blockquote">
+        <blockquote className="blockquote">
           <p>
             The Intelligence Task Ontology and Knowledge Graph (ITO) provides a comprehensive, curated model of artificial intelligence tasks, benchmarks and benchmark results, including the biomedical domain. 
           </p>
@@ -65,29 +67,23 @@ function App() {
         <SunburstChart width="900" url="https://raw.githubusercontent.com/OpenBioLink/ITOExplorer/main/processes.json" id="sunburst-processes" root="Process"/>
         <h1 id="data" className="header">Data Sunburst</h1>
         <SunburstChart width="900" url="https://raw.githubusercontent.com/OpenBioLink/ITOExplorer/main/data.json" id="sunburst-data" root="Data"/>
+        <h1 id="benchmarks" className="header">Benchmarks</h1>
+        <h2 id="vp" className="header">Computer vision</h2>
+        <h3>Trajectory for average gain ratio (task per year)</h3>
+        <iframe id="cv_traj" className="mt-2 mb-5" style={{border:"none"}} seamless="seamless" src="/ITOExplorer/vision_process.html" height="725" width="100%"></iframe>
+        <h3>Comparative yearly distribution of state-of-the-art (SOTA) averaged gain ratio values</h3>
+        <iframe id="cv_bpl" className="mt-2 mb-5" scrolling="no" style={{border:"none", display:"block", marginLeft:"auto", marginRight:"auto"}} seamless="seamless" src="/ITOExplorer/vision_process_bpl.html" height="430" width="1010px"></iframe>
+        <h3>Statistics</h3>
+        <iframe id="cv_tbl" className="mt-2 mb-5" scrolling="no" style={{border:"none", display:"block", marginLeft:"auto", marginRight:"auto"}} seamless="seamless" src="/ITOExplorer/vision_process_tbl.html" height="400" width="1000px"></iframe>
+        <h2 id="nlp" className="header">Natural language processing</h2>
+        <h3>Trajectory for average gain ratio (task per year)</h3>
+        <iframe id="cv_traj" className="mt-2 mb-5" style={{border:"none"}} seamless="seamless" src="/ITOExplorer/natural_language_processing.html" height="725" width="100%"></iframe>
+        <h3>Comparative yearly distribution of state-of-the-art (SOTA) averaged gain ratio values</h3>
+        <iframe id="cv_bpl" className="mt-2 mb-5" scrolling="no" style={{border:"none", display:"block", marginLeft:"auto", marginRight:"auto"}} seamless="seamless" src="/ITOExplorer/natural_language_processing_bpl.html" height="430" width="1010px"></iframe>
+        <h3>Statistics</h3>
+        <iframe id="cv_tbl" className="mt-2 mb-5" scrolling="no" style={{border:"none", display:"block", marginLeft:"auto", marginRight:"auto"}} seamless="seamless" src="/ITOExplorer/natural_language_processing_tbl.html" height="400" width="1000px"></iframe>
       </div>
     </div>
-  );
-}
-
-function MyVerticallyCenteredModal(props) {
-  return (
-    <Modal
-      {...props}
-      size="xl"
-      aria-labelledby="contained-modal-title-vcenter"
-      centered
-    >
-      <Modal.Header closeButton>
-        <Modal.Title id="contained-modal-title-vcenter">
-          Sunburst
-        </Modal.Title>
-      </Modal.Header>
-      <Modal.Body>
-        <div>
-        </div>
-      </Modal.Body>
-    </Modal>
   );
 }
 
