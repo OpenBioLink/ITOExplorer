@@ -53,3 +53,7 @@ code {
   padding-bottom: 10px;
   text-align: left;
 }
+
+.description {
+  opacity: 0.8;
+}

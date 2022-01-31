@@ -64,18 +64,26 @@ function App() {
         openly available.
 
         <h1 id="processes" className="header">Processes Sunburst</h1>
+        <p className="description">Click on a segment to zoom in on a sub-process, click on the center of the sunburst to return to its parent. Hover over class to see the number of children.</p>
         <SunburstChart width="900" url="https://raw.githubusercontent.com/OpenBioLink/ITOExplorer/main/processes.json" id="sunburst-processes" root="Process"/>
         <h1 id="data" className="header">Data Sunburst</h1>
+        <p className="description">Click on a segment to zoom in on a sub-process, click on the center of the sunburst to return to its parent. Hover over class to see the number of children.</p>
         <SunburstChart width="900" url="https://raw.githubusercontent.com/OpenBioLink/ITOExplorer/main/data.json" id="sunburst-data" root="Data"/>
         <h1 id="benchmarks" className="header">Benchmarks</h1>
-
+        
         <h2 id="nlp" className="header">Natural language processing</h2>
         <h3>Trajectory for average gain ratio (task per year)</h3>
         Global SOTA trajectory map for AI tasks in natural language processing. Vertical dashes represent anchors (i.e. first results establishing a new benchmark for a given task). Arrows represent gains in a SOTA trajectory. Arrow colors represent the ratio of the gain, i.e. darker arrows represent stronger gains. AI tasks that would contain only a single arrow are not displayed.
-        <iframe id="cv_traj" className="mt-2 mb-5" style={{border:"none"}} seamless="seamless" src="/ITOExplorer/natural_language_processing.html" height="725" width="100%"></iframe>
+        <iframe id="cv_traj" className="mt-2" style={{border:"none"}} seamless="seamless" src="/ITOExplorer/vision_process.html" height="725" width="100%"></iframe>
+        <div class="alert alert-light mb-5 pt-0 text-center" role="alert">
+          Interactive: Hover mouse over data items to display details.
+        </div>
         <h3>Comparative yearly distribution of state-of-the-art (SOTA) averaged gain ratio values</h3>
         Comparative yearly distribution of state-of-the-art (SOTA) averaged gain ratio values for NLP. Single dots in the boxplots represent the equivalent triangles values in the chart above. Anchors are not considered for this analysis.
-        <iframe id="cv_bpl" className="mt-2 mb-5" scrolling="no" style={{border:"none", display:"block", marginLeft:"auto", marginRight:"auto"}} seamless="seamless" src="/ITOExplorer/natural_language_processing_bpl.html" height="430" width="1010px"></iframe>
+        <iframe id="cv_bpl" className="mt-2" scrolling="no" style={{border:"none", display:"block", marginLeft:"auto", marginRight:"auto"}} seamless="seamless" src="/ITOExplorer/vision_process_bpl.html" height="430" width="1010px"></iframe>
+        <div class="alert alert-light mb-5 pt-0 text-center" role="alert">
+          Interactive: Hover mouse over data items to display details.
+        </div>
         <iframe id="cv_tbl" className="mt-2 mb-5" scrolling="no" style={{border:"none", display:"block", marginLeft:"auto", marginRight:"auto"}} seamless="seamless" src="/ITOExplorer/natural_language_processing_tbl.html" height="237" width="433"></iframe>
         <h3>Pictorial chart</h3>
         <iframe id="cv_pikto" className="mt-2 mb-5" style={{border:"none", display:"block", marginLeft:"auto", marginRight:"auto"}} seamless="seamless" src="/ITOExplorer/natural_language_processing_pikto.html" height="725" width="100%"></iframe>
@@ -87,10 +95,16 @@ function App() {
         <h2 id="vp" className="header">Computer vision</h2>
         <h3>Trajectory for average gain ratio (task per year)</h3>
         Global SOTA trajectory map for AI tasks in computer vision. Vertical dashes represent anchors (i.e. first results establishing a new benchmark for a given task). Arrows represent gains in a SOTA trajectory. Arrow colors represent the ratio of the gain, i.e. darker arrows represent stronger gains. AI tasks that would contain only a single arrow are not displayed.
-        <iframe id="cv_traj" className="mt-2 mb-5" style={{border:"none"}} seamless="seamless" src="/ITOExplorer/vision_process.html" height="725" width="100%"></iframe>
+        <iframe id="cv_traj" className="mt-2" style={{border:"none"}} seamless="seamless" src="/ITOExplorer/natural_language_processing.html" height="725" width="100%"></iframe>
+        <div class="alert alert-light mb-5 pt-0 text-center" role="alert">
+          Interactive: Hover mouse over data items to display details.
+        </div>
         <h3>Comparative yearly distribution of state-of-the-art (SOTA) averaged gain ratio values</h3>
         Comparative yearly distribution of state-of-the-art (SOTA) averaged gain ratio values for computer vision. Single dots in the boxplots represent the equivalent triangles values in the chart above. Anchors are not considered for this analysis.
-        <iframe id="cv_bpl" className="mt-2 mb-5" scrolling="no" style={{border:"none", display:"block", marginLeft:"auto", marginRight:"auto"}} seamless="seamless" src="/ITOExplorer/vision_process_bpl.html" height="430" width="1010px"></iframe>
+        <iframe id="cv_bpl" className="mt-2" scrolling="no" style={{border:"none", display:"block", marginLeft:"auto", marginRight:"auto"}} seamless="seamless" src="/ITOExplorer/natural_language_processing_bpl.html" height="430" width="1010px"></iframe>
+        <div class="alert alert-light mb-5 pt-0 text-center" role="alert">
+          Interactive: Hover mouse over data items to display details.
+        </div>
         <iframe id="cv_tbl" className="mt-2 mb-5" scrolling="no" style={{border:"none", display:"block", marginLeft:"auto", marginRight:"auto"}} seamless="seamless" src="/ITOExplorer/vision_process_tbl.html"  height="237" width="520"></iframe>
         <h3>Pictorial chart</h3>
         <iframe id="cv_pikto" className="mt-2 mb-5" style={{border:"none", display:"block", marginLeft:"auto", marginRight:"auto"}} seamless="seamless" src="/ITOExplorer/vision_process_pikto.html" height="725" width="100%"></iframe>
@@ -98,7 +112,9 @@ function App() {
         <iframe id="cv_sota_active" className="mt-2 mb-5" style={{border:"none", display:"block", marginLeft:"auto", marginRight:"auto"}} seamless="seamless" src="/ITOExplorer/vision_process_prop_sota_active.html" height="500px" width="1000px"></iframe>
         <h3>Number of active benchmarks per task and year</h3>
         <iframe id="cv_active_task" className="mt-2 mb-5" style={{border:"none", display:"block", marginLeft:"auto", marginRight:"auto"}} seamless="seamless" src="/ITOExplorer/vision_process_task_active.html" height="725" width="100%"></iframe>
-
+      </div>
+      <div class="footer" className="mb-4 border-top">
+        <span class="footer_about"><p className="mt-2">Work received funding from</p><a id="simplex-logo" href="https://www.netidee.at" target="_blank"><img alt="Netidee logo" src="/ITOExplorer/netidee-Logo.svg"/></a></span>
       </div>
     </div>
   );
