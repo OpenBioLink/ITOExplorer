@@ -70,7 +70,7 @@ function App() {
         <p className="description">Click on a segment to zoom in on a sub-process, click on the center of the sunburst to return to its parent. Hover over class to see the number of children.</p>
         <SunburstChart width="900" url="https://raw.githubusercontent.com/OpenBioLink/ITOExplorer/main/data.json" id="sunburst-data" root="Data"/>
         <h1 id="benchmarks" className="header">Benchmarks</h1>
-        
+
         <h2 id="nlp" className="header">Natural language processing</h2>
         <h3>Trajectory for average gain ratio (task per year)</h3>
         Global SOTA trajectory map for AI tasks in natural language processing. Vertical dashes represent anchors (i.e. first results establishing a new benchmark for a given task). Arrows represent gains in a SOTA trajectory. Arrow colors represent the ratio of the gain, i.e. darker arrows represent stronger gains. AI tasks that would contain only a single arrow are not displayed.
@@ -84,7 +84,6 @@ function App() {
         <div class="alert alert-light mb-5 pt-0 text-center" role="alert">
           Interactive: Hover mouse over data items to display details.
         </div>
-        <iframe id="cv_tbl" className="mt-2 mb-5" scrolling="no" style={{border:"none", display:"block", marginLeft:"auto", marginRight:"auto"}} seamless="seamless" src="/ITOExplorer/natural_language_processing_tbl.html" height="237" width="433"></iframe>
         <h3>Pictorial chart</h3>
         <iframe id="cv_pikto" className="mt-2 mb-5" style={{border:"none", display:"block", marginLeft:"auto", marginRight:"auto"}} seamless="seamless" src="/ITOExplorer/natural_language_processing_pikto.html" height="725" width="100%"></iframe>
         <h3>Number Benchmarks SOTA/Active</h3>
@@ -105,7 +104,6 @@ function App() {
         <div class="alert alert-light mb-5 pt-0 text-center" role="alert">
           Interactive: Hover mouse over data items to display details.
         </div>
-        <iframe id="cv_tbl" className="mt-2 mb-5" scrolling="no" style={{border:"none", display:"block", marginLeft:"auto", marginRight:"auto"}} seamless="seamless" src="/ITOExplorer/vision_process_tbl.html"  height="237" width="520"></iframe>
         <h3>Pictorial chart</h3>
         <iframe id="cv_pikto" className="mt-2 mb-5" style={{border:"none", display:"block", marginLeft:"auto", marginRight:"auto"}} seamless="seamless" src="/ITOExplorer/vision_process_pikto.html" height="725" width="100%"></iframe>
         <h3>Number Benchmarks SOTA/Active</h3>
