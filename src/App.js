@@ -112,7 +112,13 @@ function App() {
         <iframe id="cv_active_task" className="mt-2 mb-5" style={{border:"none", display:"block", marginLeft:"auto", marginRight:"auto"}} seamless="seamless" src="/ITOExplorer/vision_process_task_active.html" height="725" width="100%"></iframe>
       </div>
       <div class="footer" className="mb-4 border-top">
-        <span class="footer_about"><p className="mt-2">Work received funding from</p><a id="simplex-logo" href="https://www.netidee.at" target="_blank"><img alt="Netidee logo" src="/ITOExplorer/netidee-Logo.svg"/></a></span>
+        <span class="footer_about">
+          <p className="mt-2">Work received funding from</p>
+          <a id="simplex-logo" href="https://www.netidee.at" target="_blank"><img alt="Netidee logo" src="/ITOExplorer/netidee-Logo.svg"/></a>
+          <p>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a><br/>
+            <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png"></a>
+          </p>
+      </span>
       </div>
     </div>
   );
