@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/ITOExplorer/static/css/main.cc24bd35.chunk.css",
-    "main.js": "/ITOExplorer/static/js/main.6e507aad.chunk.js",
-    "main.js.map": "/ITOExplorer/static/js/main.6e507aad.chunk.js.map",
+    "main.js": "/ITOExplorer/static/js/main.d6c190a2.chunk.js",
+    "main.js.map": "/ITOExplorer/static/js/main.d6c190a2.chunk.js.map",
     "runtime-main.js": "/ITOExplorer/static/js/runtime-main.a1ed7abd.js",
     "runtime-main.js.map": "/ITOExplorer/static/js/runtime-main.a1ed7abd.js.map",
     "static/css/2.383c0125.chunk.css": "/ITOExplorer/static/css/2.383c0125.chunk.css",
@@ -21,6 +21,6 @@
     "static/css/2.383c0125.chunk.css",
     "static/js/2.8b34473d.chunk.js",
     "static/css/main.cc24bd35.chunk.css",
-    "static/js/main.6e507aad.chunk.js"
+    "static/js/main.d6c190a2.chunk.js"
   ]
 }
