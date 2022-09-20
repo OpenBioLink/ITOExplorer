@@ -80,8 +80,10 @@ function App() {
               Interactive: Hover mouse over data items to display details.
             </div>
           <h3>Pictorial chart</h3>
-            <iframe id="cv_pikto" className="mt-2 mb-5" style={{border:"none", display:"block", marginLeft:"auto", marginRight:"auto"}} seamless="seamless" src="/ITOExplorer/natural_language_processing_pikto.html" height="725" width="100%"></iframe>
-
+            <iframe id="cv_pikto" className="mt-2 mb-0" style={{border:"none", display:"block", marginLeft:"auto", marginRight:"auto"}} seamless="seamless" src="/ITOExplorer/natural_language_processing_pikto.html" height="725" width="100%"></iframe>
+            <div class="alert alert-light mb-5 pt-0 text-center" role="alert">
+              Interactive: Hover mouse over data items to display details.
+            </div>
 
         <h2 id="vp" className="header">Computer vision</h2>
           <h3>Trajectories for average gain ratio</h3>
@@ -91,7 +93,10 @@ function App() {
               Interactive: Hover mouse over data items to display details.
             </div>
           <h3>Pictorial chart</h3>
-            <iframe id="cv_pikto" className="mt-2 mb-5" style={{border:"none", display:"block", marginLeft:"auto", marginRight:"auto"}} seamless="seamless" src="/ITOExplorer/vision_process_pikto.html" height="725" width="100%"></iframe>
+            <iframe id="cv_pikto" className="mt-2 mb-0" style={{border:"none", display:"block", marginLeft:"auto", marginRight:"auto"}} seamless="seamless" src="/ITOExplorer/vision_process_pikto.html" height="725" width="100%"></iframe>
+            <div class="alert alert-light mb-5 pt-0 text-center" role="alert">
+              Interactive: Hover mouse over data items to display details.
+            </div>
       </div>
       <div class="footer" className="mb-4 border-top">
         <span class="footer_about">
